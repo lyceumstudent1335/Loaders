@@ -1,0 +1,268 @@
+:root {
+    font-size: 14pt;
+}
+
+.navbar-toggler {
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler:focus:not(.collapsed) .navbar-toggler-icon {
+    background: url(../img/cross.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.style-3 {
+    del {
+      color: rgba(black, 0.5);
+      text-decoration: none;
+      position: relative;
+      font-weight: 100;
+      &:before {
+        content: " ";
+        display: block;
+        width: 100%;
+        border-top: 8px double rgba(black, 0.8);
+        height: 4px;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        transform: rotate(-11deg);
+      }
+    }
+    ins {
+      font-size: 64pt;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 1em 1em 1em .5em;
+    }
+}
+
+del {
+    font-size: 32pt;
+}
+
+ins {
+    font-size: 64pt;
+}
+
+.skew{
+    transform: skewX(20deg);
+}
+
+.skew > div{
+    transform: skewX(-20deg);
+}
+
+.step {
+    width: 248px;
+}
+
+.step-num {
+    width: 96px;
+    height: 50%;
+    font-size: 64px;
+    border: solid 2px black;
+    border-left: none;
+}
+
+.step-postscript {
+    width: 100%;
+    font-size: 20px;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 5px black;
+}
+
+.pointer {
+    width: 248px;
+    height: 48px;
+    position: relative;
+    background: black;
+    margin-left: 24px;
+    margin-left: 24px;
+    color: white;
+}
+.pointer:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 24px solid white;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+}
+.pointer:before {
+    content: "";
+    position: absolute;
+    right: -24px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 24px solid black;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+}
+
+.section-title {
+    border-bottom: solid 2px var(--bs-info);
+    max-width: fit-content;
+}
+
+.form-control {
+    border: solid 1px var(--bs-info);
+    border-radius: 0;
+}
+
+.form-select {
+    border-radius: 0;
+    border: solid 1px black;
+}
+
+#sumLoaders, #sumCar, #sumAmmount {
+    border: none;
+}
+
+.form-control:focus{
+    border-color: var(--bs-info);
+    box-shadow: 0 0 2px var(--bs-info);
+}
+
+.was-validated .form-control:focus:required:invalid {
+    box-shadow: inset 0 0 2px var(--bs-danger);
+}
+
+.was-validated .form-control:focus:required:valid {
+    box-shadow: inset 0 0 2px var(--bs-success);
+}
+
+.form-select:focus {
+    box-shadow: none;
+    border: solid 1px black;
+}
+
+#sumLoaders:focus, #sumCar:focus, #sumAmmount:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.input-group-text {
+    border: none;
+    background: transparent;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-black {
+    --bs-btn-bg: black;
+    --bs-btn-hover-bg: black;
+    --bs-btn-active-bg: var(--bs-dark);
+}
+
+.text-white .form-control {
+    border: solid 1px black;
+}
+
+.text-white .form-control:focus {
+    border-color: black;
+    box-shadow: inset 0 0 2px black;
+}
+
+.btn-outline-light:hover {
+    box-shadow: 0 0 2px white;    
+}
+
+.btn-outline-light:active {
+    box-shadow: 0 0 4px white;
+}
+
+.order-form {
+    box-shadow: 2px 2px 5px black;
+}
+
+.card-verdict {
+    height: 296px;
+    color: white;
+    background: #333;
+}
+
+.mini-card {
+    height: 248px;
+    color: white;
+    background: var(--bs-info);
+    box-shadow: 0 0 5px var(--bs-info);
+}
+
+.verdict-img, .mini-card-img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 40%;
+}
+
+.zakaz-guru {
+    background: url('/static/img/zakaz-gruz.png');
+    background-size: 960px 701px;
+    height: 701px;
+
+}
+
+.traktor {
+    background: url('/static/img/construction.png');
+    background-size: 512px 512px;
+    height: 512px;
+}
+
+.zakaz-guru, .traktor {
+    background-repeat: no-repeat;
+}
+
+.mini-card-img {
+    background-image: url("/static/img/info.png");
+    max-width: 128px;
+}
+
+.verdict-success {
+    background-image: url('/static/img/checked.png');
+}
+
+.card-verdict:has(.verdict-success) {
+    box-shadow: inset -5px -8px 16px rgba(32, 201, 150, 0.829), 0 0 48px #20c997;
+}
+
+.verdict-info {
+    background-image: url('/static/img/info.png');
+}
+
+.card-verdict:has(.verdict-info) {
+    box-shadow: inset -5px -8px 16px var(--bs-info), 0 0 48px var(--bs-info);
+}
+
+.verdict-wrong {
+    background-image: url('/static/img/wrong.png');
+}
+
+.card-verdict:has(.verdict-wrong) {
+    box-shadow: inset -3px -6px 16px var(--bs-danger), 0 0 32px var(--bs-danger);
+}
+
+.disabled-form {
+    background: lightgray;
+}
+
+.disabled-form > div {
+    opacity: 0.5;
+}

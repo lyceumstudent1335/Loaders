@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+    <div class="row card-verdict p-4">
+        <div class="col-3 col-md-2">
+            <div class="verdict-img verdict-info"></div>
+        </div>
+        <div class="col">
+            <h1>Вы уже отправили заяку ранее</h1>
+            <p>Номер вашего заказа <b>{{ gen_id }}</b>. Ожидайте звонок от наших специалистов</p>
+        </div>
+    </div>
+</main>
+{% endblock %}

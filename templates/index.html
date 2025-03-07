@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% set extra_charge = (-1 * (price / 100 * 44.44) // 1 * -1) | int %}
+
+{% block content %}
+<header class="container-fluid overflow-hidden">
+    <div class="row row-cols-1 row-cols-lg-2 mb-3">
+        <div class="col" style="min-height: 648px;">
+            <div class="row" style="height: 50%;">
+                <div class="skew d-flex align-items-center justify-content-center bg-black text-white ps-5 pe-4">
+                    <div>
+                        <h1>«Вкусные грузчики»</h1>
+                        <h3 class="mb-4">Грузчики по вкусной цене!</h3>
+                        <h4>Звоните! <a class="text-white text-decoration-none" href="tel:+79119246078">+7 (911) 924-60-78</a></h4>
+                        <h6>По Санкт-Петербургу и Ленинградской области</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row bg-info" style="height: 50%;">
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="style-1">
+                        <h4>Цена/час на данный момент:</h4>
+                        <ins>
+                            <span class="amount">{{ price }}&#8381;</span>
+                        </ins>
+                        <del>
+                            <span class="amount">{{ price + extra_charge }}&#8381;</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="zakaz-guru"></div>
+        </div>
+    </div>
+</header>
+<main class="container">
+    <div class="mb-5 text-center">
+        <p>Немного слов о нашей компании</p>
+        <h3>Вкусные грузчики уже в СПб</h3>
+        <p>
+            Срочно нужны грузчики? Тогда Вы по адресу! Наша команда
+            всегда готова помочь в трудоемком процессе переезда, разгрузке
+            Ваших товаров, строительных материалов, при офисном переезде,
+            перемещение домашнего имущества или оборудования. Мы уже работаем в
+            Санкт-Петербурге и по всей Ленинградской области
+        </p>
+        <h4>Почему именно мы?</h4>
+        <div class="row row-cols-2 row-cols-sm-4 mt-2 gap-3 justify-content-around">
+            <div class="col pointer d-flex justify-content-center align-items-center">
+                Качество
+            </div>
+            <div class="col pointer d-flex justify-content-center align-items-center">
+                Скорость
+            </div>
+            <div class="col pointer d-flex justify-content-center align-items-center">
+                Надежность
+            </div>
+            <div class="col pointer d-flex justify-content-center align-items-center">
+                Пунктуальность
+            </div>
+        </div>
+    </div>
+    <div class="md-5">
+        <div class="d-flex justify-content-center">
+            <h2 class="section-title">
+                Этапы работ
+            </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-4 py-2 d-flex d-flex justify-content-evenly gap-5">
+            <div class="col step">
+                <div class="row row-cols-2">
+                    <div class="col step-num">
+                        01
+                    </div>
+                    <div class="col step-img d-flex justify-content-center align-items-center">
+                        <img src="/static/img/step1.png" width="64" height="64">
+                    </div>
+                    <div class="col step-postscript pt-4">
+                        Оставляете заявку
+                    </div>
+                </div>
+            </div>
+            <div class="col step">
+                <div class="row row-cols-2">
+                    <div class="col step-num">
+                        02
+                    </div>
+                    <div class="col step-img d-flex justify-content-center align-items-center">
+                        <img src="/static/img/step2.png" width="64" height="64">
+                    </div>
+                    <div class="col step-postscript pt-4">
+                        Консультация и предварительный расчёт
+                    </div>
+                </div>
+            </div>
+            <div class="col step">
+                <div class="row row-cols-2">
+                    <div class="col step-num">
+                        03
+                    </div>
+                    <div class="col step-img d-flex justify-content-center align-items-center">
+                        <img src="/static/img/step3.png" width="64" height="64">
+                    </div>
+                    <div class="col step-postscript pt-4">
+                        Выезд и перевозка груза
+                    </div>
+                </div>
+            </div>
+            <div class="col step">
+                <div class="row row-cols-2">
+                    <div class="col step-num">
+                        04
+                    </div>
+                    <div class="col step-img d-flex justify-content-center align-items-center">
+                        <img src="/static/img/step4.png" width="64" height="64">
+                    </div>
+                    <div class="col step-postscript pt-4">
+                        Приём и оплата работ
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-5 row row-cols-1 row-cols-md-2 d-flex justify-content-center">
+        <div class="col">
+            <div class="traktor"></div>
+        </div>
+        <div class="col" style="width: 512px;">
+            <h3>Хотите узнать о свободных вакансиях?</h3>
+            <p>Тогда звоните! <a class="text-black text-decoration-none" href="tel:+79119246068">+7 (911) 924-60-68</a></p>
+        </div>
+    </div>
+    <div id="order"></div>
+    {% if processing_order %}
+    <div class="row mb-5 p-3 mini-card">
+        <div class="col-3 col-md-2 d-flex align-items-center">
+            <div class="mini-card-img"></div>
+        </div>
+        <div class="col">
+            <h2>Вы уже оформили заказ ранее</h2>
+            <p>Номер вашего заказа <b>{{ gen_id }}</b>. Ожидайте звонка</p>
+        </div>
+    </div>
+    <div class="disabled-form">
+    {% else %}
+    <div>
+    {% endif %}
+        <div class="mb-5 p-4 text-white order-form" style="background: linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.95));">
+            <h2 class="text-center">
+                Оформление заказа
+            </h2>
+            <form class="needs-validation" method="post" action="/order" novalidate>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="firstName">Имя</label>
+                        <input class="form-control" id="firstName" name="first_name" type="text" placeholder="Иван" pattern="([А-Яа-я]+)" required>
+                        <div class="invalid-feedback">
+                            Введите имя.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="lastName">Фамилия</label>
+                        <input class="form-control" id="lastName" name="last_name" type="text" placeholder="Иванов" pattern="([А-Яа-я]+)" required>
+                        <div class="invalid-feedback">
+                            Введите фамилию.
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="address">Адрес</label>
+                        <input class="form-control" id="address" name="address" type="text" placeholder="г. Санкт-Петербур, ул. Пушкина дом 123, кв. 10" required>
+                        <div class="invalid-feedback">
+                            Введите адрес
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="loadersCount">Кол-во грузчиков</label>
+                        <input class="form-control" id="loadersCount" name="loaders_count" type="number" value="1" min="1" required>
+                        <div class="invalid-feedback">
+                            Введите количество грузчиков
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="phoneContact">Номер телефона</label>
+                        <input class="form-control" id="phoneContact" name="phone_contact" type="tel" placeholder="+7 (900) 000-00-00" required>
+                        <div class="invalid-feedback">
+                            Введите номер телефона.
+                        </div>
+                        <script>
+                            $("#phoneContact").mask("+7 (999) 999-99-99")
+                        </script>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-outline-light w-100" value="Отправить"> 
+                <script src="/static/js/formsValidate.js"></script>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(".disabled-form input").toArray().forEach(element => {
+            element.disabled = true;
+        });
+    </script>
+</main>
+{% endblock %}
